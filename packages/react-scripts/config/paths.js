@@ -62,7 +62,7 @@ module.exports = {
   appPath: resolveApp('.'),
   // UPDATED
   // Move build folder to rails app views/application
-  appBuild: resolveApp('../app/views/application/react'),
+  appBuild: path.resolve('../app/views/application/react'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
