@@ -87,6 +87,10 @@ module.exports = {
   appBuild: resolveApp('../app/views/application/client/build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
+  // UPDATED
+  // Add new html template for production that will render erb template
+  appHtmlProd: resolveApp('public/index.html.erb'),
+  appBuildProd: resolveApp('../app/views/application/client/build'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),

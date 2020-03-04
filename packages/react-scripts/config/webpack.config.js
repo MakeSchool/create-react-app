@@ -566,7 +566,10 @@ module.exports = function(webpackEnv) {
           {},
           {
             inject: true,
-            template: paths.appHtml,
+            // UPDATED
+            // Add a new html template for production that will render an erb
+            // template
+            template: isEnvDevelopment ? paths.appHtml : paths.appHtmlProd,
           },
           isEnvProduction
             ? {
