@@ -104,6 +104,25 @@ module.exports = function(api, opts, env) {
       isTypeScriptEnabled && [require('@babel/preset-typescript').default],
     ].filter(Boolean),
     plugins: [
+      // UPDATED
+      // Show file and line number of console messages in development
+      !isEnvProduction && [
+        'console-source',
+        {
+          segments: 2,
+        },
+      ],
+
+      // UPDATED
+      // Convert Lodash imports to the specific function to reduce bundle size
+      // Only during production
+      isEnvProduction && 'lodash',
+
+      // UPDATED
+      // Convertoptimize React Router imports
+      // Only during production
+      isEnvProduction && 'transform-react-router-optimize',
+
       // Strip flow types before any other transform, emulating the behavior
       // order as-if the browser supported all of the succeeding features
       // https://github.com/facebook/create-react-app/pull/5182
