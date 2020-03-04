@@ -567,11 +567,6 @@ module.exports = function(webpackEnv) {
           {
             inject: true,
             template: paths.appHtml,
-            // UPDATED
-            // Change name of production file to turn it into a rails partial
-            filename: isEnvDevelopment
-              ? 'index.html'
-              : '_react_scripts.html.erb',
           },
           isEnvProduction
             ? {
