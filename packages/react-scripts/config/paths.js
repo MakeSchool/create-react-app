@@ -83,8 +83,8 @@ module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   // UPDATED
-  // Move build folder to rails app views/application
-  appBuild: resolveApp('../app/views/application/react/build'),
+  // Move build folder to rails app views/application/client/build
+  appBuild: resolveApp('../app/views/application/client/build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
