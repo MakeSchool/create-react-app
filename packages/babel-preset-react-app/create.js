@@ -118,11 +118,6 @@ module.exports = function(api, opts, env) {
       // Only during production
       isEnvProduction && 'lodash',
 
-      // UPDATED
-      // Convertoptimize React Router imports
-      // Only during production
-      isEnvProduction && 'transform-react-router-optimize',
-
       // Strip flow types before any other transform, emulating the behavior
       // order as-if the browser supported all of the succeeding features
       // https://github.com/facebook/create-react-app/pull/5182
