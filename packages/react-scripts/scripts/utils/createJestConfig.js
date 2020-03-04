@@ -27,6 +27,10 @@ module.exports = (resolve, rootDir, isEjecting) => {
 
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
 
+    // TODO: remove this once we update our specs that rely on it
+    // UPDATED
+    automock: true,
+
     setupFiles: [
       isEjecting
         ? 'react-app-polyfill/jsdom'
