@@ -214,6 +214,28 @@ function build(previousFileSizes) {
         return reject(new Error(messages.warnings.join('\n\n')));
       }
 
+      // UPDATED
+      // Added these two scripts to move the build folder to the Rails public folder,
+      // and then move the index.html file to
+      // app/views/application/_client_production.html.erb
+      console.log('Copying build/ to ../public');
+
+      fs.copySync(paths.appBuild, paths.resolveApp('../public'));
+
+      console.log(
+        'Moving ../public/index.html to ../app/views/application/_client_production.html.erb'
+      );
+
+      fs.moveSync(
+        paths.resolveApp('../public/index.html'),
+        paths.resolveApp(
+          '../app/views/application/_client_production.html.erb'
+        ),
+        {
+          overwrite: true,
+        }
+      );
+
       return resolve({
         stats,
         previousFileSizes,
