@@ -567,28 +567,31 @@ module.exports = function(webpackEnv) {
         Object.assign(
           {},
           {
-            inject: true,
             // UPDATED
-            // Add a new html template for production that will render an erb
-            // template
+            // Turn off injection on production so we can customize the
+            // production output
+            inject: isEnvDevelopment,
             template: isEnvDevelopment ? paths.appHtml : paths.appHtmlProd,
           },
-          isEnvProduction
-            ? {
-                minify: {
-                  removeComments: true,
-                  collapseWhitespace: true,
-                  removeRedundantAttributes: true,
-                  useShortDoctype: true,
-                  removeEmptyAttributes: true,
-                  removeStyleLinkTypeAttributes: true,
-                  keepClosingSlash: true,
-                  minifyJS: true,
-                  minifyCSS: true,
-                  minifyURLs: true,
-                },
-              }
-            : undefined
+          // UPDATED
+          // Remove minification so we can export erb syntax
+          // isEnvProduction
+          //   ? {
+          //       minify: {
+          //         removeComments: true,
+          //         collapseWhitespace: true,
+          //         removeRedundantAttributes: true,
+          //         useShortDoctype: true,
+          //         removeEmptyAttributes: true,
+          //         removeStyleLinkTypeAttributes: true,
+          //         keepClosingSlash: true,
+          //         minifyJS: true,
+          //         minifyCSS: true,
+          //         minifyURLs: true,
+          //       },
+          //     }
+          //   : undefined
+          { minify: false }
         )
       ),
       // Inlines the webpack runtime script. This script is too small to warrant
