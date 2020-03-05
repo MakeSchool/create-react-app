@@ -571,6 +571,8 @@ module.exports = function(webpackEnv) {
             // Turn off injection on production so we can customize the
             // production output
             inject: isEnvDevelopment,
+            // UPDATED
+            // Use custom template for production so we can render an erb template
             template: isEnvDevelopment ? paths.appHtml : paths.appHtmlProd,
           },
           // UPDATED
