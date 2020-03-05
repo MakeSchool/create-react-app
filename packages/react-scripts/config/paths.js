@@ -145,3 +145,5 @@ if (
 // @remove-on-eject-end
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
+// UPDATED export this function to help with generatng paths in build step
+module.exports.resolveApp = resolveApp;
