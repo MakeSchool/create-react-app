@@ -39,7 +39,9 @@ const configFactory = require('../config/webpack.config');
 const paths = require('../config/paths');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
+// UPDATE
+// remove the deployment instructions wince we deploy a different way
+// const printHostingInstructions = require('react-dev-utils/printHostingInstructions');
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
 
@@ -109,17 +111,19 @@ checkBrowsers(paths.appPath, isInteractive)
       );
       console.log();
 
-      const appPackage = require(paths.appPackageJson);
-      const publicUrl = paths.publicUrlOrPath;
-      const publicPath = config.output.publicPath;
-      const buildFolder = path.relative(process.cwd(), paths.appBuild);
-      printHostingInstructions(
-        appPackage,
-        publicUrl,
-        publicPath,
-        buildFolder,
-        useYarn
-      );
+      // UPDATE
+      // remove hosting instructions since we deploy a different way
+      // const appPackage = require(paths.appPackageJson);
+      // const publicUrl = paths.publicUrlOrPath;
+      // const publicPath = config.output.publicPath;
+      // const buildFolder = path.relative(process.cwd(), paths.appBuild);
+      // printHostingInstructions(
+      //   appPackage,
+      //   publicUrl,
+      //   publicPath,
+      //   buildFolder,
+      //   useYarn
+      // );
     },
     err => {
       const tscCompileOnError = process.env.TSC_COMPILE_ON_ERROR === 'true';
