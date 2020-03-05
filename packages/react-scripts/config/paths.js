@@ -145,5 +145,8 @@ if (
 // @remove-on-eject-end
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
-// UPDATED export this function to help with generatng paths in build step
+
+// UPDATED export these helpers to help with generatng paths in setup/build
+// scripts
 module.exports.resolveApp = resolveApp;
+module.exports.resolveOwn = resolveOwn;

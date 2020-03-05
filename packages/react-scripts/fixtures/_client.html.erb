@@ -1,0 +1,7 @@
+<% if Rails.env.development? %>
+  <%= tag.div id: 'root' %>
+  <%= tag.script src: 'http://localhost:3001/static/js/bundle.js' %>
+  <%= tag.script src: 'http://localhost:3001/static/js/main.bundle.js' %>
+<% else %>
+  <%= render 'client_production' %>
+<% end %>

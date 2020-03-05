@@ -1,0 +1,8 @@
+<%= '\<% content_for :extra_head do %\>' %> <%= htmlWebpackPlugin.tags.headTags
+%> <%= '\<% end %\>' %>
+
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+
+<%= '\<% content_for :extra_js do %\>' %> <%= htmlWebpackPlugin.tags.bodyTags %>
+<%= '\<% end %\>' %>
