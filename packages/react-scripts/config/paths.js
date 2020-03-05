@@ -84,13 +84,12 @@ module.exports = {
   appPath: resolveApp('.'),
   // UPDATED
   // Move build folder to rails app views/application/client/build
-  appBuild: resolveApp('../app/views/application/client/build'),
+  appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   // UPDATED
   // Add new html template for production that will render erb template
-  appHtmlProd: resolveApp('public/index.html.erb'),
-  appBuildProd: resolveApp('../app/views/application/client/build'),
+  appHtmlProd: resolveApp('fixtures/index.prod.html'),
   appIndexJs: resolveModule(resolveApp, 'src/index'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
