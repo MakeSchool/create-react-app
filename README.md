@@ -68,6 +68,29 @@ yarn add https://gitpkg.now.sh/makeschool/create-react-app/packages/react-script
 yarn react-scripts setup
 ```
 
+- Add the following rake task to `build.rake`
+
+```ruby
+task client: :environment do
+  puts "Running client build scripts..."
+
+  system <<~BASH
+    echo "Removing node_modules/ from root directory to avoid dependency
+    conflicts..."
+    rm -rf node_modules
+
+    echo "Installing client/node_modules/..."
+    yarn --cwd client
+
+    echo "Running build script..."
+    yarn build --cwd client
+  BASH
+end
+
+# Ensure it runs on `bin/rails assets:precompile` script during production build
+Rake::Task['assets:precompile'].enhance ['client:build']
+```
+
 - That's it! Instructions will be printed to the console on how to run the
   server.
 
