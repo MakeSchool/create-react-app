@@ -55,12 +55,9 @@ yarn create react-app client --template typescript
 ```bash
 cd client
 yarn add
-yarn add https://gitpkg.now.sh/makeschool/create-react-app/packages/react-scripts
+npx install-package-from-github-monorepo
+makeschool/create-react-app/packages/react-scripts
 ```
-
-> When yarn supports installing from monorepos, we can change this url to pull
-> directly from our repo. For now, gitpkg.now.sh is an open source service that
-> adds this functionality for us.
 
 - Run the setup script
 
